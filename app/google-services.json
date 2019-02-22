@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "106058649801",
+    "firebase_url": "https://samadhaan-33b16.firebaseio.com",
+    "project_id": "samadhaan-33b16",
+    "storage_bucket": "samadhaan-33b16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106058649801:android:4b7a6b36442af0db",
+        "android_client_info": {
+          "package_name": "com.cricmads.samadhaanusers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106058649801-p79v9jvgrsd0migae22j9abvjh41bj0p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cricmads.samadhaanusers",
+            "certificate_hash": "49d16aa9409beaaed522d1a61c50977efa2716c6"
+          }
+        },
+        {
+          "client_id": "106058649801-msijf3giele2rh0upfotf7bdq3887dro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHEgkiJh-HujJEG4WBT5miryuaxeNG2-0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106058649801-msijf3giele2rh0upfotf7bdq3887dro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/details_page"
+    tools:context=".UserDetails3Activity">
+    <RelativeLayout
+        android:id="@+id/relativeInner"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/textfield"
+        android:paddingLeft="10dp"
+        android:elevation="8dp"
+        android:paddingTop="30dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="30dp">
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:text="Name:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="6dp"
+            android:textSize="20sp"
+            android:inputType="textCapWords"
+            android:layout_toRightOf="@id/textViewName"
+            android:hint="Enter Full Name"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewAdhaar"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextName"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="Adhaar:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextAdhaar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/editTextName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewAdhaar"
+            android:hint="Enter Adhaar No."
+            android:inputType="number"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@id/textViewAdhaar"
+            android:text="Phone:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextAdhaar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="6dp"
+            android:textSize="20sp"
+            android:inputType="number"
+            android:layout_toRightOf="@id/textViewName"
+            android:layout_marginTop="24dp"
+            android:hint="Enter Phone"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewGender"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewPhone"
+            android:layout_marginTop="24dp"
+            android:padding="5dp"
+            android:text="Your gender:"
+            android:textSize="20sp" />
+        <Spinner
+            android:id="@+id/SpinnerGender"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewPhone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@id/textViewGender"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </Spinner>
+        <TextView
+            android:id="@+id/textViewSocialCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewGender"
+            android:layout_marginTop="24dp"
+            android:padding="5dp"
+            android:text="Your social category:"
+            android:textSize="20sp" />
+        <Spinner
+            android:id="@+id/SpinnerSocialCategory"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/SpinnerGender"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@id/textViewSocialCategory"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </Spinner>
+        <HorizontalScrollView
+            android:id="@+id/scrollViewPhysicallyChallenged"
+            android:layout_width="match_parent"
+            android:layout_below="@id/textViewSocialCategory"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/textViewPhysicallyChallenged"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="24dp"
+                    android:padding="5dp"
+                    android:text="physically challenged?:"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupPhysicallyChallenged"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <RadioButton
+                        android:id="@+id/radioYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="Yes"
+                        android:onClick="onRadioButtonClicked"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="No"
+                        android:onClick="onRadioButtonClicked"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scrollViewPhysicallyChallenged"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/login"
+            android:lines="1"
+            android:padding="12dp"
+            android:text="submit"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/previous_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scrollViewPhysicallyChallenged"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/login"
+            android:lines="1"
+            android:padding="12dp"
+            android:text="Previous"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+
+
+    </RelativeLayout>
+</ScrollView>

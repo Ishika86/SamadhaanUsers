@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/details_page"
+    tools:context=".UserDetails2Activity">
+    <RelativeLayout
+        android:id="@+id/relativeInner"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/textfield"
+        android:paddingLeft="10dp"
+        android:elevation="8dp"
+        android:paddingTop="30dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="30dp">
+        <TextView
+            android:id="@+id/textViewPAN"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/spinnerTypeOfOrg"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="PAN:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextPAN"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/spinnerTypeOfOrg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewPAN"
+            android:hint="PAN"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewGSTIN"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextPAN"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="GSTIN:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextGSTIN"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/editTextPAN"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewGSTIN"
+            android:hint="Enter GSTIN"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewBankAccountNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextGSTIN"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="Bank Account no.:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextBankAccountNumber"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:layout_below="@+id/editTextGSTIN"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewBankAccountNumber"
+            android:hint="Account number"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewIFSC"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextBankAccountNumber"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="IFSC Code:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextIFSC"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/editTextBankAccountNumber"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewIFSC"
+            android:hint="IFSC code"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextIFSC"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/login"
+            android:lines="1"
+            android:padding="12dp"
+            android:text="Next"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/previousButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextIFSC"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/login"
+            android:lines="1"
+            android:padding="12dp"
+            android:text="Previous"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+</ScrollView>
