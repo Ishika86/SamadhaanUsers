@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/NewAppscroll"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/details_page">
+
+    <RelativeLayout
+        android:id="@+id/NewAppRelativeInner"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/textfield"
+        android:paddingLeft="10dp"
+        android:elevation="8dp"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="30dp">
+        <TextView
+            android:id="@+id/textViewUdhyogAdhaarNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/udhyog_adhaar"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextUdhyogAdhaarNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewUdhyogAdhaarNewApplication"
+            android:hint="Udhyog Adhaar"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewUdhyogNameNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextUdhyogAdhaarNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/udhyog_name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextUdhyogNameNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/editTextUdhyogAdhaarNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewUdhyogNameNewApplication"
+            android:hint="Enter Udhyog Name"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewUdhyogAddressNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextUdhyogNameNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/address"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewUdhyogDistrictNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextUdhyogAddressNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/district"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextUdhyogDistrictNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/editTextUdhyogAddressNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewUdhyogDistrictNewApplication"
+            android:hint="Enter District"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+
+        <EditText
+            android:id="@+id/editTextUdhyogAddressNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/editTextUdhyogNameNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewUdhyogAddressNewApplication"
+            android:hint="Enter Udhyog Address"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+
+        <TextView
+            android:id="@+id/textViewUdhyogStateNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewUdhyogDistrictNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/state"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerStateNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextUdhyogDistrictNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@id/textViewUdhyogStateNewApplication"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold">
+
+        </Spinner>
+        <TextView
+            android:id="@+id/textViewNameNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/spinnerStateNewApplication"
+            android:padding="4dp"
+            android:layout_marginTop="24dp"
+            android:text="Name:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextNameNewApplication"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/spinnerStateNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="6dp"
+            android:textSize="20sp"
+            android:inputType="textCapWords"
+            android:layout_toRightOf="@id/textViewNameNewApplication"
+            android:hint="Enter Full Name"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewAdhaarNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewNameNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="Adhaar:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextAdhaarNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/textViewNameNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewAdhaarNewApplication"
+            android:hint="Enter Adhaar No."
+            android:inputType="number"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewPhoneNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@id/textViewAdhaarNewApplication"
+            android:text="Phone:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextPhoneNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextAdhaarNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="6dp"
+            android:textSize="20sp"
+            android:inputType="phone"
+            android:layout_toRightOf="@id/textViewNameNewApplication"
+            android:layout_marginTop="24dp"
+            android:hint="Enter Phone"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewSocialCategoryNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextPhoneNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="5dp"
+            android:text="Your social category:"
+            android:textSize="20sp" />
+        <Spinner
+            android:id="@+id/SpinnerSocialCategoryNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextPhoneNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@id/textViewSocialCategoryNewApplication"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </Spinner>
+        <TextView
+            android:id="@+id/textViewEmailNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@id/SpinnerSocialCategoryNewApplication"
+            android:text="@string/email"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextEmailNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/SpinnerSocialCategoryNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="6dp"
+            android:textSize="20sp"
+            android:inputType="textEmailAddress"
+            android:layout_toRightOf="@id/textViewNameNewApplication"
+            android:layout_marginTop="24dp"
+            android:hint="@string/enter_email"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textViewCouncilNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextEmailNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="Council:"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerCouncilNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextEmailNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@id/textViewCouncilNewApplication"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold">
+
+        </Spinner>
+
+        <TextView
+            android:id="@+id/textViewTypeOfPetitioner"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:padding="5dp"
+            android:layout_below="@id/textViewCouncilNewApplication"
+            android:text="@string/type_of_petitioner"
+            android:textSize="20sp" />
+        <Spinner
+            android:id="@+id/spinnertypeOfPetitionerNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewCouncilNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@id/textViewTypeOfPetitioner"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold">
+
+        </Spinner>
+
+
+        <Button
+            android:id="@+id/Next_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewTypeOfPetitioner"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/login"
+            android:lines="1"
+            android:padding="12dp"
+            android:text="@string/next"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+
+
+    </RelativeLayout>
+</ScrollView>

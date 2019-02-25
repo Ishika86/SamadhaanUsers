@@ -26,7 +26,8 @@
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UserDetails2Activity" />
-        <activity android:name=".UserDetails3Activity"></activity>
+        <activity android:name=".UserDetails3Activity" />
+        <activity android:name=".NewApplicationActivity"></activity>
     </application>
 
 </manifest>

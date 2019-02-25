@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/NewAppScrollRespondent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/details_page">
+
+    <RelativeLayout
+        android:id="@+id/NewAppRespondentRelativeInner"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/textfield"
+        android:paddingLeft="10dp"
+        android:elevation="8dp"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="30dp">
+        <TextView
+            android:id="@+id/workOrderdetailsNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:textStyle="bold"
+            android:text="@string/work_order_details"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/textViewWorkOrder1NewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/workOrderdetailsNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/work_order_1"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/mandatoryWorkOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="*"
+            android:layout_marginTop="24dp"
+            android:paddingTop="4dp"
+            android:layout_below="@id/workOrderdetailsNewApplication"
+            android:layout_toRightOf="@id/textViewWorkOrder1NewApplication"
+            android:textColor="@android:color/holo_red_dark"
+            />
+        <EditText
+            android:id="@+id/editTextWorkOrder1NewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/workOrderdetailsNewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/mandatoryWorkOrder"
+            android:hint="@string/work_order_no"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewWorkOrder1DateNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewWorkOrder1NewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/date"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/mandatoryWorkOrderDate"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="*"
+            android:layout_marginTop="24dp"
+            android:paddingTop="4dp"
+            android:layout_below="@id/editTextWorkOrder1NewApplication"
+            android:layout_toRightOf="@id/textViewWorkOrder1DateNewApplication"
+            android:textColor="@android:color/holo_red_dark"
+            />
+
+        <EditText
+            android:id="@+id/editTextWorkOrder1DateNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/textViewWorkOrder1NewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:inputType="date"
+            android:layout_toRightOf="@id/mandatoryWorkOrderDate"
+            android:hint="@string/dd_mm_yyyy"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+
+
+        <TextView
+            android:id="@+id/textViewWorkOrder2NewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextWorkOrder1DateNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/work_order_2"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextWorkOrder2NewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/editTextWorkOrder1DateNewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewWorkOrder2NewApplication"
+            android:hint="@string/work_order_no"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewWorkOrder2DateNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextWorkOrder2NewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/date"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextWorkOrder2DateNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/editTextWorkOrder2NewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:inputType="date"
+            android:layout_toRightOf="@id/textViewWorkOrder2DateNewApplication"
+            android:hint="@string/dd_mm_yyyy"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+
+
+
+        <TextView
+            android:id="@+id/textViewWorkOrder3NewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewWorkOrder2DateNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/work_order_3"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextWorkOrder3NewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/textViewWorkOrder2DateNewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewWorkOrder3NewApplication"
+            android:hint="@string/work_order_no"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewWorkOrder3DateNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextWorkOrder3NewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/date"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextWorkOrder3DateNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/editTextWorkOrder3NewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:inputType="date"
+            android:layout_toRightOf="@id/textViewWorkOrder3DateNewApplication"
+            android:hint="@string/dd_mm_yyyy"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/uploadWorkOrdersBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextWorkOrder3DateNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/login"
+            android:lines="1"
+            android:text="@string/upload_merged_pdf_of_all_work_orders"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/workOrderUploadStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/not_uploaded_yet"
+            android:padding="2dp"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_below="@id/uploadWorkOrdersBtn"/>
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/invoicedetailsNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/workOrderUploadStatus"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:textStyle="bold"
+            android:text="@string/invoice_details"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/textViewInvoice1NewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/invoicedetailsNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/invoice_1"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/mandatoryInvoice"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="*"
+            android:layout_marginTop="24dp"
+            android:paddingTop="4dp"
+            android:layout_below="@id/invoicedetailsNewApplication"
+            android:layout_toRightOf="@id/textViewInvoice1NewApplication"
+            android:textColor="@android:color/holo_red_dark"
+            />
+        <EditText
+            android:id="@+id/editTextInvoice1NewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/invoicedetailsNewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/mandatoryInvoice"
+            android:hint="@string/invoice_number"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewInvoice1DateNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextInvoice1NewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/date"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/mandatoryInvoiceDate"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="*"
+            android:layout_marginTop="24dp"
+            android:paddingTop="4dp"
+            android:layout_below="@id/editTextInvoice1NewApplication"
+            android:layout_toRightOf="@id/textViewInvoice1DateNewApplication"
+            android:textColor="@android:color/holo_red_dark"
+            />
+
+        <EditText
+            android:id="@+id/editTextInvoice1DateNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/editTextInvoice1NewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:inputType="date"
+            android:layout_toRightOf="@id/mandatoryInvoiceDate"
+            android:hint="@string/dd_mm_yyyy"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textViewInvoice2NewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextInvoice1DateNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/invoice_2"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextInvoice2NewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/editTextInvoice1DateNewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewInvoice2NewApplication"
+            android:hint="@string/invoice_number"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewInvoice2DateNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextInvoice2NewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/date"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextInvoice2DateNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/editTextInvoice2NewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:inputType="date"
+            android:layout_toRightOf="@id/textViewInvoice2DateNewApplication"
+            android:hint="@string/dd_mm_yyyy"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+
+
+
+        <TextView
+            android:id="@+id/textViewInvoice3NewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewInvoice2DateNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/invoice_3"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextInvoice3NewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/textViewInvoice2DateNewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewInvoice3NewApplication"
+            android:hint="@string/invoice_number"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewInvoice3DateNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextInvoice3NewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/date"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextInvoice3DateNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/editTextInvoice3NewApplication"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:inputType="date"
+            android:layout_toRightOf="@id/textViewInvoice3DateNewApplication"
+            android:hint="@string/dd_mm_yyyy"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/uploadInvoiceBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextInvoice3DateNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/login"
+            android:lines="1"
+            android:text="@string/upload_merged_pdf_of_all_invoices"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/invoiceUploadStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/not_uploaded_yet"
+            android:padding="2dp"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_below="@id/uploadInvoiceBtn"/>
+
+        <Button
+            android:id="@+id/Submit_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/invoiceUploadStatus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/login"
+            android:lines="1"
+            android:padding="12dp"
+            android:text="@string/submit"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+</ScrollView>

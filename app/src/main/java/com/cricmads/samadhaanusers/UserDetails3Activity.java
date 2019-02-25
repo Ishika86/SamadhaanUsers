@@ -148,7 +148,7 @@ public class UserDetails3Activity extends AppCompatActivity {
                     mUsersDatabaseReference.child(userName).child("physicallyHandicaped").setValue(physicallyChalleneged);
                     mUsersDatabaseReference.child(userName).child("typeOfOrganisation").setValue(typeOfOrg);
                     mUsersDatabaseReference.child(userName).child("panNumber").setValue(pan);
-                    mUsersDatabaseReference.child(userName).child("GSTIN").setValue(gstin);
+                    mUsersDatabaseReference.child(userName).child("gstin").setValue(gstin);
                     mUsersDatabaseReference.child(userName).child("district").setValue(District);
                     mUsersDatabaseReference.child(userName).child("state").setValue(state);
                     mUsersDatabaseReference.child(userName).child("bankAccountNumber").setValue(bankAcNo);

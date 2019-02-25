@@ -71,4 +71,43 @@
     <string name="sc">SC</string>
     <string name="obc">OBC</string>
     <string name="general">General</string>
+    <string name="new_application">New Application</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="petitioner">Petitioner</string>
+    <string name="respondent">Respondent</string>
+    <string name="uploads">Uploads</string>
+    <string name="email">Email:</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="type_of_petitioner">Type of petitioner:</string>
+    <string name="small">Small</string>
+    <string name="micro">Micro</string>
+    <string name="respondent_name">Respondent Name</string>
+    <string name="respondent_in_form">Respondent:</string>
+    <string name="respondent_address">Respondent address</string>
+    <string name="respondent_district">Respondent District</string>
+    <string name="phone">Phone:</string>
+    <string name="respondent_phone_no">Respondent Phone no.</string>
+    <string name="respondent_email">Respondent Email</string>
+    <string name="amount">Amount:</string>
+    <string name="amount_payable">Amount payable</string>
+    <string name="work_order_details">Work order details:</string>
+    <string name="work_order_1">Work order 1:</string>
+    <string name="work_order_no">Work order no.</string>
+    <string name="date">Date:</string>
+    <string name="dd_mm_yyyy">DD/MM/YYYY</string>
+    <string name="work_order_2">Work order 2:</string>
+    <string name="work_order_3">Work Order 3:</string>
+    <string name="upload_merged_pdf_of_all_work_orders">Upload merged PDF of all work orders</string>
+    <string name="not_uploaded_yet">Not uploaded yet</string>
+    <string name="invoice_details">Invoice details:</string>
+    <string name="invoice_1">Invoice 1:</string>
+    <string name="invoice_number">Invoice number</string>
+    <string name="invoice_2">Invoice 2:</string>
+    <string name="invoice_3">Invoice 3:</string>
+    <string name="upload_merged_pdf_of_all_invoices">Upload merged pdf of all invoices</string>
+    <string name="submit">Submit</string>
+    <string name="uploaded_successfully">Uploaded successfully</string>
+    <string name="pending_approval">Pending approval</string>
 </resources>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/NewAppScrollRespondent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/details_page">
+
+    <RelativeLayout
+        android:id="@+id/NewAppRespondentRelativeInner"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/textfield"
+        android:paddingLeft="10dp"
+        android:elevation="8dp"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="30dp">
+        <TextView
+            android:id="@+id/textViewRespondentNameNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/respondent_in_form"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextRespondentNameNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewRespondentNameNewApplication"
+            android:hint="@string/respondent_name"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewRespondentAddressNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextRespondentNameNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/address"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewRespondentDistrictNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextRespondentAddressNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/district"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextRespondentDistrictNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/editTextRespondentAddressNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewRespondentDistrictNewApplication"
+            android:hint="@string/respondent_district"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+
+        <EditText
+            android:id="@+id/editTextRespondentAddressNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/editTextRespondentNameNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewRespondentAddressNewApplication"
+            android:hint="@string/respondent_address"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+
+        <TextView
+            android:id="@+id/textViewRespondentStateNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewRespondentDistrictNewApplication"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/state"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerRespondentStateNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextRespondentDistrictNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@id/textViewRespondentStateNewApplication"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold">
+
+        </Spinner>
+        <TextView
+            android:id="@+id/textViewRespondentPhoneNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@id/spinnerRespondentStateNewApplication"
+            android:text="@string/phone"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextRespondentPhoneNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/spinnerRespondentStateNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="6dp"
+            android:textSize="20sp"
+            android:inputType="phone"
+            android:layout_toRightOf="@id/textViewRespondentPhoneNewApplication"
+            android:layout_marginTop="24dp"
+            android:hint="@string/respondent_phone_no"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textViewRespondentEmailNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@id/editTextRespondentPhoneNewApplication"
+            android:text="@string/email"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextRespondentEmailNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextRespondentPhoneNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="6dp"
+            android:textSize="20sp"
+            android:inputType="textEmailAddress"
+            android:layout_toRightOf="@id/textViewRespondentEmailNewApplication"
+            android:layout_marginTop="24dp"
+            android:hint="@string/respondent_email"
+            android:padding="5dp"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textViewRespondentAmountNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@id/editTextRespondentEmailNewApplication"
+            android:text="@string/amount"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextRespondentAmountNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/editTextRespondentEmailNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="6dp"
+            android:textSize="20sp"
+            android:inputType="number"
+            android:layout_toRightOf="@id/textViewRespondentAmountNewApplication"
+            android:layout_marginTop="24dp"
+            android:hint="@string/amount_payable"
+            android:padding="5dp"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/Next_ButtonRespondent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextRespondentAmountNewApplication"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/login"
+            android:lines="1"
+            android:padding="12dp"
+            android:text="@string/next"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+
+
+    </RelativeLayout>
+</ScrollView>
