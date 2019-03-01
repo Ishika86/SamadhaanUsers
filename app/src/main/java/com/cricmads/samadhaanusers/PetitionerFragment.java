@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
@@ -19,8 +20,13 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -38,7 +44,8 @@ public class PetitionerFragment extends Fragment {
     private ArrayAdapter<String> stateSpinnerAdapter, councilSpinnerAdapter, socialCategorySpinnerAdapter, typeOfPetitionerSpinnerAdapter;
     private String state, council, socialCategory, typeOfPetitioner;
     private Button next;
-    DatabaseReference ApplicationRef;
+    DatabaseReference ApplicationRef, usersRef;
+    String userName;
     buttonClick click;
 
     public PetitionerFragment() {
@@ -61,6 +68,8 @@ public class PetitionerFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_petitioner, container, false);
         ApplicationRef = FirebaseDatabase.getInstance().getReference().child("applications").child(ApplicationId);
+        usersRef = FirebaseDatabase.getInstance().getReference().child("profiles").child("users");
+
         udhyogAdhaar = rootView.findViewById(R.id.editTextUdhyogAdhaarNewApplication);
         udhyogName = rootView.findViewById(R.id.editTextUdhyogNameNewApplication);
         district = rootView.findViewById(R.id.editTextUdhyogDistrictNewApplication);
@@ -74,122 +83,102 @@ public class PetitionerFragment extends Fragment {
         typeOfPetitionerSpinner = rootView.findViewById(R.id.spinnertypeOfPetitionerNewApplication);
         socialCategorySpinner = rootView.findViewById(R.id.SpinnerSocialCategoryNewApplication);
         next = rootView.findViewById(R.id.Next_Button);
-
-        final ArrayList<String> states = new ArrayList<String>();
-        states.add(getString(R.string.andhraPradesh));
-        states.add(getString(R.string.arunachalPradesh));
-        states.add(getString(R.string.assam));
-        states.add(getString(R.string.bihar));
-        states.add(getString(R.string.chattisgarh));
-        states.add(getString(R.string.goa));
-        states.add(getString(R.string.gujarat));
-        states.add(getString(R.string.haryana));
-        states.add(getString(R.string.himachalPradesh));
-        states.add(getString(R.string.jammuAndKashmir));
-        states.add(getString(R.string.Jharkhand));
-        states.add(getString(R.string.karnataka));
-        states.add(getString(R.string.Kerala));
-        states.add(getString(R.string.madhyaPradesh));
-        states.add(getString(R.string.maharashtra));
-        states.add(getString(R.string.manipur));
-        states.add(getString(R.string.meghalaya));
-        states.add(getString(R.string.mizoram));
-        states.add(getString(R.string.nagaland));
-        states.add(getString(R.string.odhisha));
-        states.add(getString(R.string.punjab));
-        states.add(getString(R.string.rajasthan));
-        states.add(getString(R.string.sikkim));
-        states.add(getString(R.string.tamilNadu));
-        states.add(getString(R.string.telangana));
-        states.add(getString(R.string.Tripura));
-        states.add(getString(R.string.uttarakhand));
-        states.add(getString(R.string.UttarPradesh));
-        states.add(getString(R.string.WestBengal));
-        states.add(getString(R.string.AndamanAndNicobarIslands));
-        states.add(getString(R.string.DadraAndNagarHaveli));
-        states.add(getString(R.string.NCTofDelhi));
-        states.add(getString(R.string.puducherry));
-        states.add(getString(R.string.chandigarh));
-        states.add(getString(R.string.damanAndDiu));
-        states.add(getString(R.string.lakshadweep));
-        stateSpinnerAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_spinner_item,states);
-        stateSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        stateSpinner.setAdapter(stateSpinnerAdapter);
-        stateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String userEmailId = user.getEmail();
+        userName = userEmailId.replace(".",",");
+        usersRef.child(userName).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selection = (String) parent.getItemAtPosition(position);
-                if (!TextUtils.isEmpty(selection)) {
-                    state = selection;
-                }
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            UserData userData = dataSnapshot.getValue(UserData.class);
+            udhyogAdhaar.setText(userData.getUdhyogAadhaar());
+            udhyogAdhaar.setEnabled(false);
+            udhyogName.setText(userData.getUdyogName());
+            udhyogName.setEnabled(false);
+            address.setText(userData.getAddress());
+            address.setEnabled(false);
+            district.setText(userData.getDistrict());
+            district.setEnabled(false);
+            name.setText(userData.getName());
+            name.setEnabled(false);
+            adhaar.setText(userData.getAadhaar());
+            adhaar.setEnabled(false);
+            phone.setText(userData.getPhone());
+            phone.setEnabled(false);
+            email.setText(userData.getEmail());
+            email.setEnabled(false);
+            state = userData.getState();
+                final ArrayList<String> states = new ArrayList<String>();
+                states.add(state);
+                stateSpinnerAdapter = new ArrayAdapter<String>(getActivity(),
+                        android.R.layout.simple_spinner_item,states);
+                stateSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+                stateSpinner.setAdapter(stateSpinnerAdapter);
+                stateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        String selection = (String) parent.getItemAtPosition(position);
+                        if (!TextUtils.isEmpty(selection)) {
+                            state = selection;
+                        }
+                    }
+
+                    // Because AdapterView is an abstract class, onNothingSelected must be defined
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        state = "Unknown"; // Unknown
+                    }
+                });
+                stateSpinner.setEnabled(false);
+
+                final ArrayList<String> councils = new ArrayList<String>();
+                councils.add("MSEFC "+state);
+                councilSpinnerAdapter = new ArrayAdapter<String>(getActivity(),
+                        android.R.layout.simple_spinner_item,councils);
+                councilSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+                councilSpinner.setAdapter(councilSpinnerAdapter);
+                councilSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        String selection = (String) parent.getItemAtPosition(position);
+                        if (!TextUtils.isEmpty(selection)) {
+                            council = selection;
+                        }
+                    }
+
+                    // Because AdapterView is an abstract class, onNothingSelected must be defined
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        council = "Unknown"; // Unknown
+                    }
+                });
+                socialCategory = userData.getSocialCategory();
+                councilSpinner.setEnabled(false);
+                final ArrayList<String> socialCategories = new ArrayList<String>();
+                socialCategories.add(socialCategory);
+                socialCategorySpinnerAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item,socialCategories);
+                socialCategorySpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+                socialCategorySpinner.setAdapter(socialCategorySpinnerAdapter);
+                socialCategorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        String selection = (String) parent.getItemAtPosition(position);
+                        if (!TextUtils.isEmpty(selection)) {
+                            socialCategory = selection;
+                        }
+                    }
+
+                    // Because AdapterView is an abstract class, onNothingSelected must be defined
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        socialCategory = "Unknown"; // Unknown
+                    }
+                });
+                socialCategorySpinner.setEnabled(false);
             }
 
-            // Because AdapterView is an abstract class, onNothingSelected must be defined
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                state = "Unknown"; // Unknown
-            }
-        });
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-
-
-
-
-        final ArrayList<String> councils = new ArrayList<String>();
-        councils.add("MSEFC"+getString(R.string.andhraPradesh));
-        councils.add("MSEFC"+getString(R.string.arunachalPradesh));
-        councils.add("MSEFC"+getString(R.string.assam));
-        councils.add("MSEFC"+getString(R.string.bihar));
-        councils.add("MSEFC"+getString(R.string.chattisgarh));
-        councils.add("MSEFC"+getString(R.string.goa));
-        councils.add("MSEFC"+getString(R.string.gujarat));
-        councils.add("MSEFC"+getString(R.string.haryana));
-        councils.add("MSEFC"+getString(R.string.himachalPradesh));
-        councils.add("MSEFC"+getString(R.string.jammuAndKashmir));
-        councils.add("MSEFC"+getString(R.string.Jharkhand));
-        councils.add("MSEFC"+getString(R.string.karnataka));
-        councils.add("MSEFC"+getString(R.string.Kerala));
-        councils.add("MSEFC"+getString(R.string.madhyaPradesh));
-        councils.add("MSEFC"+getString(R.string.maharashtra));
-        councils.add("MSEFC"+getString(R.string.manipur));
-        councils.add("MSEFC"+getString(R.string.meghalaya));
-        councils.add("MSEFC"+getString(R.string.mizoram));
-        councils.add("MSEFC"+getString(R.string.nagaland));
-        councils.add("MSEFC"+getString(R.string.odhisha));
-        councils.add("MSEFC"+getString(R.string.punjab));
-        councils.add("MSEFC"+getString(R.string.rajasthan));
-        councils.add("MSEFC"+getString(R.string.sikkim));
-        councils.add("MSEFC"+getString(R.string.tamilNadu));
-        councils.add("MSEFC"+getString(R.string.telangana));
-        councils.add("MSEFC"+getString(R.string.Tripura));
-        councils.add("MSEFC"+getString(R.string.uttarakhand));
-        councils.add("MSEFC"+getString(R.string.UttarPradesh));
-        councils.add("MSEFC"+getString(R.string.WestBengal));
-        councils.add("MSEFC"+getString(R.string.AndamanAndNicobarIslands));
-        councils.add("MSEFC"+getString(R.string.DadraAndNagarHaveli));
-        councils.add("MSEFC"+getString(R.string.NCTofDelhi));
-        councils.add("MSEFC"+getString(R.string.puducherry));
-        councils.add("MSEFC"+getString(R.string.chandigarh));
-        councils.add("MSEFC"+getString(R.string.damanAndDiu));
-        councils.add("MSEFC"+getString(R.string.lakshadweep));
-        councilSpinnerAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_spinner_item,councils);
-        councilSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        councilSpinner.setAdapter(councilSpinnerAdapter);
-        councilSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selection = (String) parent.getItemAtPosition(position);
-                if (!TextUtils.isEmpty(selection)) {
-                    council = selection;
-                }
-            }
-
-            // Because AdapterView is an abstract class, onNothingSelected must be defined
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                council = "Unknown"; // Unknown
             }
         });
 
@@ -198,30 +187,14 @@ public class PetitionerFragment extends Fragment {
 
 
 
-        final ArrayList<String> socialCategories = new ArrayList<String>();
-        socialCategories.add(getString(R.string.general));
-        socialCategories.add(getString(R.string.obc));
-        socialCategories.add(getString(R.string.sc));
-        socialCategories.add(getString(R.string.st));
-        socialCategories.add(getString(R.string.minority));
-        socialCategorySpinnerAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item,socialCategories);
-        socialCategorySpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        socialCategorySpinner.setAdapter(socialCategorySpinnerAdapter);
-        socialCategorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selection = (String) parent.getItemAtPosition(position);
-                if (!TextUtils.isEmpty(selection)) {
-                    socialCategory = selection;
-                }
-            }
 
-            // Because AdapterView is an abstract class, onNothingSelected must be defined
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                socialCategory = "Unknown"; // Unknown
-            }
-        });
+
+
+
+
+
+
+
 
 
 

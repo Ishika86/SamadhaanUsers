@@ -2,12 +2,17 @@ package com.cricmads.samadhaanusers;
 
 public class Application {
 
-    public String applicationNumber, udhyogAdhaar,udhyogName, address, district, state, name, adhaar, phone, socialCategory, email, council, typeOfPetitioner, respondentName, respondentAddress, respondentDistrict, respondentState, respondentPhone, respondentEmail, respondentAmount, workOrder1Number, workOrder1Date, workOrder2Number, workOrder2Date, workOrder3Number, workOrder3Date, workOrderPDFurl, invoice1Number, invoice1Date, invoice2Number, invoice2Date, invoice3Number, invoice3Date, invoicePDFurl, assignedTo, applicationDate, applicationTime, status, applicantUsername, escalated;
+    public String assignedToAndStatus, usernameAndStatus, priority, dueDate, category, applicationNumber, udhyogAdhaar,udhyogName, address, district, state, name, adhaar, phone, socialCategory, email, council, typeOfPetitioner, respondentName, respondentAddress, respondentDistrict, respondentState, respondentPhone, respondentEmail, respondentAmount, workOrder1Number, workOrder1Date, workOrder2Number, workOrder2Date, workOrder3Number, workOrder3Date, workOrderPDFurl, invoice1Number, invoice1Date, invoice2Number, invoice2Date, invoice3Number, invoice3Date, invoicePDFurl, assignedTo, applicationDate, applicationTime, status, applicantUsername, escalated;
 
     public Application() {
     }
 
-    public Application(String applicationNumber, String udhyogAdhaar, String udhyogName, String address, String district, String state, String name, String adhaar, String phone, String socialCategory, String email, String council, String typeOfPetitioner, String respondentName, String respondentAddress, String respondentDistrict, String respondentState, String respondentPhone, String respondentEmail, String respondentAmount, String workOrder1Number, String workOrder1Date, String workOrder2Number, String workOrder2Date, String workOrder3Number, String workOrder3Date, String workOrderPDFurl, String invoice1Number, String invoice1Date, String invoice2Number, String invoice2Date, String invoice3Number, String invoice3Date, String invoicePDFurl, String assignedTo, String applicationDate, String applicationTime, String status, String applicantUsername, String escalated) {
+    public Application(String assignedToAndStatus, String usernameAndStatus, String priority, String dueDate, String category, String applicationNumber, String udhyogAdhaar, String udhyogName, String address, String district, String state, String name, String adhaar, String phone, String socialCategory, String email, String council, String typeOfPetitioner, String respondentName, String respondentAddress, String respondentDistrict, String respondentState, String respondentPhone, String respondentEmail, String respondentAmount, String workOrder1Number, String workOrder1Date, String workOrder2Number, String workOrder2Date, String workOrder3Number, String workOrder3Date, String workOrderPDFurl, String invoice1Number, String invoice1Date, String invoice2Number, String invoice2Date, String invoice3Number, String invoice3Date, String invoicePDFurl, String assignedTo, String applicationDate, String applicationTime, String status, String applicantUsername, String escalated) {
+        this.assignedToAndStatus = assignedToAndStatus;
+        this.usernameAndStatus = usernameAndStatus;
+        this.priority = priority;
+        this.dueDate = dueDate;
+        this.category = category;
         this.applicationNumber = applicationNumber;
         this.udhyogAdhaar = udhyogAdhaar;
         this.udhyogName = udhyogName;
@@ -48,6 +53,46 @@ public class Application {
         this.status = status;
         this.applicantUsername = applicantUsername;
         this.escalated = escalated;
+    }
+
+    public String getAssignedToAndStatus() {
+        return assignedToAndStatus;
+    }
+
+    public void setAssignedToAndStatus(String assignedToAndStatus) {
+        this.assignedToAndStatus = assignedToAndStatus;
+    }
+
+    public String getUsernameAndStatus() {
+        return usernameAndStatus;
+    }
+
+    public void setUsernameAndStatus(String usernameAndStatus) {
+        this.usernameAndStatus = usernameAndStatus;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getApplicationTime() {

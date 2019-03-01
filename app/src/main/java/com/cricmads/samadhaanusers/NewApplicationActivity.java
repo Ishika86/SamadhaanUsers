@@ -33,7 +33,7 @@ public class NewApplicationActivity extends AppCompatActivity implements buttonC
         editor.putString("ApplicationId", ApplicationId);
         editor.commit();
         ApplicationRef = FirebaseDatabase.getInstance().getReference().child("applications").child(ApplicationId);
-        Application application = new Application("", "","", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "","");
+        Application application = new Application("","","","","","", "","", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "","");
         ApplicationRef.setValue(application);
         viewPager = (NonSwipeableViewPager) findViewById(R.id.viewpager);
         ApplicationAdapter adapter = new ApplicationAdapter(this, getSupportFragmentManager());

@@ -188,7 +188,7 @@ public class UploadsFragment extends Fragment {
                                   ApplicationRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                       @Override
                                       public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                          Application application = dataSnapshot.getValue(Application.class);
+                                          final Application application = dataSnapshot.getValue(Application.class);
                                           FirebaseDatabase.getInstance().getReference().child("allApplications").child(applicationNumber).setValue(application).addOnCompleteListener(new OnCompleteListener<Void>() {
                                               @Override
                                               public void onComplete(@NonNull Task<Void> task) {
@@ -202,8 +202,58 @@ public class UploadsFragment extends Fragment {
                                                           pendingApps++;
                                                           String pendingApplications = String.valueOf(pendingApps);
                                                           FirebaseDatabase.getInstance().getReference().child("applicationsData").child("pendingApproval").setValue(pendingApplications);
-                                                          Toast.makeText(getActivity(), "Application Number: " +applicationNumber, Toast.LENGTH_SHORT).show();
-                                                          click.buttonClicked(v, 3);
+                                                          FirebaseDatabase.getInstance().getReference().child("profiles").child("officers").child(application.getCouncil()).child("Support Team")
+                                                                  .addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                      String pending, assignedTo;
+                                                                      int pendingApps= Integer.MAX_VALUE;
+                                                                      @Override
+                                                                      public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                                          for (DataSnapshot supportSnapshot: dataSnapshot.getChildren()){
+                                                                              String pendingNo = supportSnapshot.child("pending").getValue(String.class);
+                                                                              int pendingNumber = Integer.parseInt(pendingNo);
+                                                                              if (pendingNumber<pendingApps){
+                                                                                  pendingApps = pendingNumber;
+                                                                                  assignedTo = supportSnapshot.getKey();
+                                                                              }
+                                                                          }
+                                                                          pending = String.valueOf(pendingApps);
+                                                                          DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("allApplications").child(applicationNumber);
+                                                                          ref.child("assignedToAndStatus").setValue(assignedTo+application.getStatus());
+                                                                          ref.child("usernameAndStatus").setValue(userName+application.getStatus());
+                                                                          FirebaseDatabase.getInstance().getReference().child("allApplications").child(applicationNumber).child("assignedTo").setValue(assignedTo).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                              @Override
+                                                                              public void onComplete(@NonNull Task<Void> task) {
+                                                                                  FirebaseDatabase.getInstance().getReference().child("profiles").child("officers").child(application.getCouncil()).child("Support Team").child(assignedTo).addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                                      @Override
+                                                                                      public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                                                          String pending = dataSnapshot.child("pending").getValue(String.class);
+                                                                                          int pendingNumber = Integer.parseInt(pending);
+                                                                                          pendingNumber++;
+                                                                                          String newPending = String.valueOf(pendingNumber);
+                                                                                          FirebaseDatabase.getInstance().getReference().child("profiles").child("officers").child(application.getCouncil()).child("Support Team").child(assignedTo).child("pending").setValue(newPending).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                                              @Override
+                                                                                              public void onComplete(@NonNull Task<Void> task) {
+                                                                                                  Toast.makeText(getActivity(), "Application Number: " +applicationNumber, Toast.LENGTH_SHORT).show();
+                                                                                                  click.buttonClicked(v, 3);
+                                                                                              }
+                                                                                          });
+                                                                                      }
+
+                                                                                      @Override
+                                                                                      public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                                                      }
+                                                                                  });
+                                                                              }
+                                                                          });
+
+                                                                      }
+
+                                                                      @Override
+                                                                      public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                                      }
+                                                                  });
                                                       }
 
                                                       @Override
