@@ -27,7 +27,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UserDetails2Activity" />
         <activity android:name=".UserDetails3Activity" />
-        <activity android:name=".NewApplicationActivity"></activity>
+        <activity android:name=".NewApplicationActivity" />
+        <activity android:name=".HomeDetailsActivity"></activity>
     </application>
 
 </manifest>

@@ -9,46 +9,6 @@
     tools:showIn="@layout/app_bar_home"
     tools:context=".HomeActivity">
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="195dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/demoimage" />
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="195dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/demoimage" />
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="195dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/demoimage" />
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="195dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/demoimage" />
-
-            <ImageView
-                android:layout_width="200sp"
-                android:layout_height="195dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/demoimage" />
-        </LinearLayout>
-    </HorizontalScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,72 +18,83 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="0dp"
-            android:id="@+id/cardTest"
+            android:id="@+id/ApplicationFiledView"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="4dp"
+            android:elevation="4dp"
             android:layout_weight="1"
             app:cardBackgroundColor="@android:color/holo_blue_bright">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/applicationFiled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:text="12,785"
+                    android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="20dp" />
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="Application Fields"
+                    android:textAlignment="center"
+                    android:text="@string/application_filed_by_mse"
                     android:textColor="@android:color/black"
                     android:textSize="16dp" />
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#07fafafa"
                     android:padding="3dp"
-                    android:text="More Infor"
+                    android:text="@string/more_information"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="12dp" />
-
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="0dp"
+            android:id="@+id/AmountView"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            app:cardCornerRadius="4dp"
+            android:elevation="4dp"
+
             app:cardBackgroundColor="@android:color/holo_blue_bright">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/totalAmount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:text="12,785"
                     android:textColor="@android:color/black"
-                    android:textSize="20dp" />
+                    android:textAlignment="center"
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="Application Feilds"
+                    android:text="@string/total_amount_involved"
                     android:textColor="@android:color/black"
                     android:textSize="16dp" />
 
@@ -132,10 +103,10 @@
                     android:layout_height="wrap_content"
                     android:background="#07fafafa"
                     android:padding="3dp"
-                    android:text="More Infor"
+                    android:text="@string/more_information"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="12dp" />
+                    android:textSize="16sp" />
 
 
             </LinearLayout>
@@ -147,7 +118,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="1dp"
+        android:layout_margin="4dp"
         android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
@@ -155,26 +126,33 @@
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            app:cardCornerRadius="4dp"
+            android:elevation="4dp"
+            android:id="@+id/mutually_settled_view"
             app:cardBackgroundColor="@android:color/holo_blue_bright">
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/mutually_settled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:text="12,785"
                     android:textColor="@android:color/black"
-                    android:textSize="20dp" />
+                    android:textAlignment="center"
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="Application Fields"
+                    android:text="@string/applications_mutually_settled"
                     android:textColor="@android:color/black"
                     android:textSize="16dp" />
 
@@ -183,10 +161,10 @@
                     android:layout_height="wrap_content"
                     android:background="#07fafafa"
                     android:padding="3dp"
-                    android:text="More Infor"
+                    android:text="@string/more_information"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="12dp" />
+                    android:textSize="16sp" />
 
 
             </LinearLayout>
@@ -194,29 +172,37 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="0dp"
+            android:id="@+id/applicationPending_view"
+
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            app:cardCornerRadius="4dp"
+            android:elevation="4dp"
+
             app:cardBackgroundColor="@android:color/holo_blue_bright">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/applicationPending"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:text="12,785"
                     android:textColor="@android:color/black"
-                    android:textSize="20dp" />
+                    android:textAlignment="center"
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="Application Fields"
+                    android:text="@string/applications_pending"
                     android:textColor="@android:color/black"
                     android:textSize="16dp" />
 
@@ -225,14 +211,126 @@
                     android:layout_height="wrap_content"
                     android:background="#07fafafa"
                     android:padding="3dp"
-                    android:text="More Infor"
+                    android:text="@string/more_information"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="12dp" />
+                    android:textSize="16sp" />
 
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
+
+
+
     </LinearLayout>
 
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:id="@+id/applicationRejected_view"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="4dp"
+            android:elevation="4dp"
+
+            app:cardBackgroundColor="@android:color/holo_blue_bright">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/applicationRejected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="12,785"
+                    android:textColor="@android:color/black"
+                    android:textAlignment="center"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="@string/applications_rejected_by_msefc"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#07fafafa"
+                    android:padding="3dp"
+                    android:text="@string/more_information"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:id="@+id/applicationDisposed_view"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="4dp"
+            android:elevation="4dp"
+
+            app:cardBackgroundColor="@android:color/holo_blue_bright">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/applicationDisposed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="12,785"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="@string/applications_disposed_by_msefc_council"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#07fafafa"
+                    android:padding="3dp"
+                    android:text="@string/more_information"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+
+    </LinearLayout>
 </LinearLayout>

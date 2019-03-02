@@ -110,4 +110,20 @@
     <string name="submit">Submit</string>
     <string name="uploaded_successfully">Uploaded successfully</string>
     <string name="pending_approval">Pending approval</string>
+    <string name="name">Name:</string>
+    <string name="enter_full_name">Enter Full Name</string>
+    <string name="adhaar">Adhaar:</string>
+    <string name="enter_adhaar_no">Enter Adhaar No.</string>
+    <string name="enter_phone">Enter Phone</string>
+    <string name="your_social_category">Your social category:</string>
+    <string name="council">Council:</string>
+    <string name="application_filed_by_mse">Applications filed by MSE</string>
+    <string name="total_amount_involved">Total amount involved</string>
+    <string name="applications_mutually_settled">Applications mutually settled</string>
+    <string name="applications_pending">Applications pending</string>
+    <string name="applications_rejected_by_msefc">Applications rejected by MSEFC Council</string>
+    <string name="applications_disposed_by_msefc_council">Applications disposed by MSEFC Council</string>
+    <string name="more_information">More Information</string>
+    <string name="ministry">Ministry</string>
+    <string name="category">Category</string>
 </resources>

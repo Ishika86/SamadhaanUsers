@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -28,6 +29,8 @@ public class HomeActivity extends AppCompatActivity
     private TextView applicationFiledTxt, totalAmountTxt, mutually_settledTxt, applicationPendingTxt, applicationRejectedTxt, applicationDisposedTxt;
     private int applicationFiled=0, totalAmount=0, mutually_settled=0, applicationPending=0, applicationRejected=0, applicationDisposed=0;
     DatabaseReference dataref;
+    private CardView applicationFiledCard, totalAmountCard, mutually_settledCard, applicationPendingCard, applicationRejectedCard, applicationDisposedCard;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +40,64 @@ public class HomeActivity extends AppCompatActivity
         getSupportActionBar().setTitle(R.string.Samadhaan);
         dataref = FirebaseDatabase.getInstance().getReference().child("applicationsData");
         applicationFiledTxt = findViewById(R.id.applicationFiled);
+        applicationFiledCard = findViewById(R.id.ApplicationFiledView);
         totalAmountTxt = findViewById(R.id.totalAmount);
+        totalAmountCard = findViewById(R.id.AmountView);
         mutually_settledTxt = findViewById(R.id.mutually_settled);
+        mutually_settledCard = findViewById(R.id.mutually_settled_view);
         applicationPendingTxt = findViewById(R.id.applicationPending);
+        applicationPendingCard = findViewById(R.id.applicationPending_view);
         applicationRejectedTxt = findViewById(R.id.applicationRejected);
+        applicationRejectedCard = findViewById(R.id.applicationRejected_view);
         applicationDisposedTxt = findViewById(R.id.applicationDisposed);
+        applicationDisposedCard = findViewById(R.id.applicationDisposed_view);
 
+        applicationFiledCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, HomeDetailsActivity.class);
+                intent.putExtra("cardType", "applicationFiledCard" );
+                startActivity(intent);
+            }
+        });
+        totalAmountCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+        mutually_settledCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, HomeDetailsActivity.class);
+                intent.putExtra("cardType", "mutually_settledCard" );
+                startActivity(intent);
+            }
+        });
+
+        applicationPendingCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, HomeDetailsActivity.class);
+                intent.putExtra("cardType", "applicationPendingCard" );
+                startActivity(intent);
+            }
+        });
+        applicationRejectedCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, HomeDetailsActivity.class);
+                intent.putExtra("cardType", "applicationRejectedCard" );
+                startActivity(intent);
+            }
+        });
+        applicationDisposedCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, HomeDetailsActivity.class);
+                intent.putExtra("cardType", "applicationDisposedCard" );
+                startActivity(intent);
+            }
+        });
         dataref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
