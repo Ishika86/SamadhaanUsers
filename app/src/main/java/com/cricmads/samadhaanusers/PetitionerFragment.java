@@ -40,9 +40,9 @@ import static android.content.Context.MODE_PRIVATE;
 public class PetitionerFragment extends Fragment {
     public static final String MY_SHARED_PREFERENCES = "MySharedPrefs";
     private EditText udhyogAdhaar, udhyogName, address, district, name, adhaar, phone, email;
-    private Spinner stateSpinner, councilSpinner, socialCategorySpinner, typeOfPetitionerSpinner, categorySpinner, ministrySpinner;
-    private ArrayAdapter<String> stateSpinnerAdapter, councilSpinnerAdapter, socialCategorySpinnerAdapter, typeOfPetitionerSpinnerAdapter, ministrySpinnerAdapter, categorySpinnerAdapter;
-    private String state, council, socialCategory, typeOfPetitioner, category, ministry;
+    private Spinner stateSpinner, councilSpinner, socialCategorySpinner, typeOfPetitionerSpinner;
+    private ArrayAdapter<String> stateSpinnerAdapter, councilSpinnerAdapter, socialCategorySpinnerAdapter, typeOfPetitionerSpinnerAdapter;
+    private String state, council, socialCategory, typeOfPetitioner;
     private Button next;
     DatabaseReference ApplicationRef, usersRef;
     String userName;

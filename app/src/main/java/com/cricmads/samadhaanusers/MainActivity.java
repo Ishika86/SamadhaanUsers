@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity
                 String userEmailId = user.getEmail();
                 String userName = userEmailId.replace(".",",");
                 if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
-                    UserData userData = new UserData(user.getDisplayName(), user.getEmail(), user.getUid(), "", "", "", "", "", "", "", "", "", "", "", "", "", "", "","", "", "");
+                    UserData userData = new UserData("",user.getDisplayName(), user.getEmail(), user.getUid(), "", "", "", "", "", "", "", "", "", "", "", "", "", "", "","", "", "");
                     mUsersDatabaseReference.child(userName).setValue(userData);
                 } else {
                     Toast.makeText(this, "Signed in",Toast.LENGTH_SHORT).show();
@@ -194,9 +194,13 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_search) {
+            Intent intent = new Intent(MainActivity.this, SearchUAIDActivity.class);
+            startActivity(intent);
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_add_money) {
+            Intent intent = new Intent(MainActivity.this, AddMoneyActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_slideshow) {
 

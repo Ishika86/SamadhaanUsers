@@ -22,7 +22,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class UserDetails3Activity extends AppCompatActivity {
     private EditText nameEditText, adhaarText, phoneEditText;
@@ -34,7 +36,7 @@ public class UserDetails3Activity extends AppCompatActivity {
     private RadioGroup radioGroupPhysicallyChallenged;
     private FirebaseAuth mFirebaseAuth;
     private String mUserName;
-    private String udhyogAdhaar, udhyogName, Address, District, pincode, noOfEmployee, state, businessActivity, typeOfOrg,pan,gstin,bankAcNo,IFSC;
+    private String typeOfAccount, udhyogAdhaar, udhyogName, Address, District, pincode, noOfEmployee, state, businessActivity, typeOfOrg,pan,gstin,bankAcNo,IFSC;
     private ArrayAdapter<String> socialCategorySpinnerAdapter, genderSpinnerAdapter;
 
     @Override
@@ -43,6 +45,7 @@ public class UserDetails3Activity extends AppCompatActivity {
         setContentView(R.layout.activity_user_details3);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setTitle("3/3");
+        typeOfAccount = getIntent().getStringExtra("typeOfAccount");
         mUserName = "";
         gender=""; socialCategory = "";physicallyChalleneged="";
         mUsersDatabaseReference = FirebaseDatabase.getInstance().getReference().child("profiles").child("users");
@@ -134,12 +137,13 @@ public class UserDetails3Activity extends AppCompatActivity {
 
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     String userEmailId = user.getEmail();
-                    String userName = userEmailId.replace(".",",");
+                    final String userName = userEmailId.replace(".",",");
                     mUsersDatabaseReference.child(userName).child("name").setValue(nameEditText.getText().toString());
                     mUsersDatabaseReference.child(userName).child("email").setValue(user.getEmail());
                     mUsersDatabaseReference.child(userName).child("udhyogAadhaar").setValue(udhyogAdhaar);
                     mUsersDatabaseReference.child(userName).child("aadhaar").setValue(adhaarText.getText().toString());
                     mUsersDatabaseReference.child(userName).child("udyogName").setValue(udhyogName);
+                    mUsersDatabaseReference.child(userName).child("typeOfAccount").setValue(typeOfAccount);
                     mUsersDatabaseReference.child(userName).child("address").setValue(Address);
                     mUsersDatabaseReference.child(userName).child("pincode").setValue(pincode);
                     mUsersDatabaseReference.child(userName).child("gender").setValue(gender);
@@ -157,9 +161,32 @@ public class UserDetails3Activity extends AppCompatActivity {
                     mUsersDatabaseReference.child(userName).child("noOfEmployess").setValue(noOfEmployee).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            Intent intent = new Intent(UserDetails3Activity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
+
+                            String saveCurrentTime, saveCurrentDate;
+
+                            Calendar calForDate = Calendar.getInstance();
+                            SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+                            saveCurrentDate = currentDate.format(calForDate.getTime());
+
+                            SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+                            saveCurrentTime = currentTime.format(calForDate.getTime());
+                            if (typeOfAccount.equals("Seller")){
+
+                                Summary summary = new Summary("0", "6","30", "0");
+                                String year = saveCurrentDate.substring(saveCurrentDate.length()-4, saveCurrentDate.length());
+                                FirebaseDatabase.getInstance().getReference().child("orders").child(userName).child(year).child("summary").setValue(summary);
+                            }
+
+                            Bank bank = new Bank( udhyogAdhaar, "0", saveCurrentDate, saveCurrentDate, "0","0");
+                            FirebaseDatabase.getInstance().getReference().child("bank").child(userName).setValue(bank).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Intent intent = new Intent(UserDetails3Activity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            });
+
                         }
                     });
 

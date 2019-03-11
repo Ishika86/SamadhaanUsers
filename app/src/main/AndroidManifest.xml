@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cricmads.samadhaanusers">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,7 +30,12 @@
         <activity android:name=".UserDetails2Activity" />
         <activity android:name=".UserDetails3Activity" />
         <activity android:name=".NewApplicationActivity" />
-        <activity android:name=".HomeDetailsActivity"></activity>
+        <activity android:name=".HomeDetailsActivity" />
+        <activity android:name=".HomeCategoryActivity" />
+        <activity android:name=".SearchUAIDActivity" />
+        <activity android:name=".AvailableActivity" />
+        <activity android:name=".LockActivity" />
+        <activity android:name=".AddMoneyActivity"></activity>
     </application>
 
 </manifest>

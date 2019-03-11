@@ -53,7 +53,7 @@ import static android.content.Context.MODE_PRIVATE;
  */
 public class UploadsFragment extends Fragment {
     public static final String MY_SHARED_PREFERENCES = "MySharedPrefs";
-    private EditText workOrder1,dateWorkOrder1, workOrder2, workOrder3,dateWorkOrder2, dateWorkOrder3, Invoice1, Invoice2, Invoice3, Invoice1date, Invoice2date, Invoice3date;
+    private EditText transId, workOrder1,dateWorkOrder1, workOrder2, workOrder3,dateWorkOrder2, dateWorkOrder3, Invoice1, Invoice2, Invoice3, Invoice1date, Invoice2date, Invoice3date;
     private String workOrderURL="", InvoiceURL="";
     private StorageReference storageWorkOrdersRef;
     private StorageReference storageInvoiceRef;
@@ -93,6 +93,7 @@ public class UploadsFragment extends Fragment {
         storageWorkOrdersRef = FirebaseStorage.getInstance().getReference().child("workOrders");
         storageInvoiceRef = FirebaseStorage.getInstance().getReference().child("invoices");
         workOrder1 = rootView.findViewById(R.id.editTextWorkOrder1NewApplication);
+        //transId = rootView.findViewById(R.id.editTextTransactionIdNewApplication);
         workOrder2 = rootView.findViewById(R.id.editTextWorkOrder2NewApplication);
         workOrder3 = rootView.findViewById(R.id.editTextWorkOrder3NewApplication);
         dateWorkOrder1 = rootView.findViewById(R.id.editTextWorkOrder1DateNewApplication);
@@ -174,10 +175,10 @@ public class UploadsFragment extends Fragment {
                     ApplicationRef.child("applicantUsername").setValue(userName);
                     ApplicationRef.child("escalated").setValue("no");
 
-                    FirebaseDatabase.getInstance().getReference().child("applicationsData").addListenerForSingleValueEvent(new ValueEventListener() {
+                    FirebaseDatabase.getInstance().getReference().child("applicationsData").child("central").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            String appNo = dataSnapshot.child("totalApplications").getValue(String.class);
+                            String appNo = dataSnapshot.child("ApplicationFiled").getValue(String.class);
 
                           int appNumber = Integer.parseInt(appNo);
                           appNumber++;
@@ -193,15 +194,15 @@ public class UploadsFragment extends Fragment {
                                               @Override
                                               public void onComplete(@NonNull Task<Void> task) {
                                                   ApplicationRef.removeValue();
-                                                  FirebaseDatabase.getInstance().getReference().child("applicationsData").child("totalApplications").setValue(applicationNumber);
-                                                  FirebaseDatabase.getInstance().getReference().child("applicationsData").addListenerForSingleValueEvent(new ValueEventListener() {
+                                                  //FirebaseDatabase.getInstance().getReference().child("applicationsData").child("totalApplications").setValue(applicationNumber);
+                                                  FirebaseDatabase.getInstance().getReference().child("applicationsData").child("central").addListenerForSingleValueEvent(new ValueEventListener() {
                                                       @Override
                                                       public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                          String pending = dataSnapshot.child("pendingApproval").getValue(String.class);
+                                                          String pending = dataSnapshot.child("Applications pending").getValue(String.class);
                                                           int pendingApps = Integer.parseInt(pending);
                                                           pendingApps++;
                                                           String pendingApplications = String.valueOf(pendingApps);
-                                                          FirebaseDatabase.getInstance().getReference().child("applicationsData").child("pendingApproval").setValue(pendingApplications);
+                                                          //FirebaseDatabase.getInstance().getReference().child("applicationsData").child("pendingApproval").setValue(pendingApplications);
                                                           FirebaseDatabase.getInstance().getReference().child("profiles").child("officers").child(application.getCouncil()).child("Support Team")
                                                                   .addListenerForSingleValueEvent(new ValueEventListener() {
                                                                       String pending, assignedTo;

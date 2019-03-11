@@ -17,9 +17,9 @@ import java.util.ArrayList;
 
 public class UserDetailsActivity extends AppCompatActivity {
     private EditText udhyogAdhaarEditText, udhyogNameEditText, AddressEditText, DistrictEditText, pincodeEditText, noOfEmployeeEditText;
-    private Spinner stateSpinner, businessActivitySpinner, typeOfOrgSpinner;
-    private String state, businessActivity, typeOfOrg;
-    private ArrayAdapter<String> stateSpinnerAdapter, businessActivitySpinnerAdapter, typeOfOrgSpinnerAdapter;
+    private Spinner stateSpinner, businessActivitySpinner, typeOfOrgSpinner, typeOfAccountSpinner;
+    private String state, businessActivity, typeOfOrg, typeOfAccount="";
+    private ArrayAdapter<String> stateSpinnerAdapter, businessActivitySpinnerAdapter, typeOfOrgSpinnerAdapter, typeOfAccountSpinnerAdapter;
     private Button next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,31 @@ public class UserDetailsActivity extends AppCompatActivity {
         stateSpinner = findViewById(R.id.spinnerState);
         businessActivitySpinner = findViewById(R.id.spinnerBusinessActivity);
         typeOfOrgSpinner = findViewById(R.id.spinnerTypeOfOrg);
+        typeOfAccountSpinner = findViewById(R.id.spinnerTypeOfAccountNewApplication);
+
+
+        final ArrayList<String> typesOfAccount = new ArrayList<String>();
+        typesOfAccount.add(getString(R.string.manufacturer));
+        typesOfAccount.add(getString(R.string.seller));
+        typeOfAccountSpinnerAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,typesOfAccount);
+        typeOfAccountSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        typeOfAccountSpinner.setAdapter(typeOfAccountSpinnerAdapter);
+        typeOfAccountSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selection = (String) parent.getItemAtPosition(position);
+                if (!TextUtils.isEmpty(selection)) {
+                    typeOfAccount = selection;
+                }
+            }
+
+            // Because AdapterView is an abstract class, onNothingSelected must be defined
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                typeOfAccount = "Unknown"; // Unknown
+            }
+        });
 
 
         final ArrayList<String> states = new ArrayList<String>();
@@ -154,7 +179,7 @@ public class UserDetailsActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (udhyogAdhaarEditText.getText().toString().isEmpty()||udhyogNameEditText.getText().toString().isEmpty()|| AddressEditText.getText().toString().isEmpty()||DistrictEditText.getText().toString().isEmpty()||pincodeEditText.getText().toString().isEmpty()||noOfEmployeeEditText.getText().toString().isEmpty()||state.isEmpty()||businessActivity.isEmpty()||typeOfOrg.isEmpty()){
+                if (typeOfAccount.isEmpty()||udhyogAdhaarEditText.getText().toString().isEmpty()||udhyogNameEditText.getText().toString().isEmpty()|| AddressEditText.getText().toString().isEmpty()||DistrictEditText.getText().toString().isEmpty()||pincodeEditText.getText().toString().isEmpty()||noOfEmployeeEditText.getText().toString().isEmpty()||state.isEmpty()||businessActivity.isEmpty()||typeOfOrg.isEmpty()){
 
                     Toast.makeText(UserDetailsActivity.this, "Please Enter all details", Toast.LENGTH_LONG).show();
                 }
@@ -167,6 +192,7 @@ public class UserDetailsActivity extends AppCompatActivity {
                     intent.putExtra("pincode", pincodeEditText.getText().toString());
                     intent.putExtra("noOfEmployee", noOfEmployeeEditText.getText().toString());
                     intent.putExtra("state", state);
+                    intent.putExtra("typeOfAccount", typeOfAccount);
                     intent.putExtra("businessActivity",businessActivity );
                     intent.putExtra("typeOfOrg", typeOfOrg);
                     startActivity(intent);

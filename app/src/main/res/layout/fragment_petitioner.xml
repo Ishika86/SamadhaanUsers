@@ -290,6 +290,9 @@
 
         </Spinner>
 
+
+
+
         <TextView
             android:id="@+id/textViewTypeOfPetitioner"
             android:layout_width="wrap_content"
@@ -315,62 +318,14 @@
 
         </Spinner>
 
-        <TextView
-            android:id="@+id/textViewCategory"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="24dp"
-            android:padding="5dp"
-            android:layout_below="@id/textViewTypeOfPetitioner"
-            android:text="@string/category"
-            android:textSize="20sp" />
-        <Spinner
-            android:id="@+id/spinnerCategoryNewApplication"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@id/textViewTypeOfPetitioner"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="24dp"
-            android:layout_toRightOf="@id/textViewCategory"
-            android:lines="1"
-            android:textAlignment="center"
-            android:textSize="15sp"
-            android:textStyle="bold">
 
-        </Spinner>
-
-        <TextView
-            android:id="@+id/textViewMinistry"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="24dp"
-            android:padding="5dp"
-            android:layout_below="@id/textViewCategory"
-            android:text="@string/ministry"
-            android:textSize="20sp" />
-        <Spinner
-            android:id="@+id/spinnerMinistryNewApplication"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@id/textViewCategory"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="24dp"
-            android:layout_toRightOf="@id/textViewMinistry"
-            android:lines="1"
-            android:textAlignment="center"
-            android:textSize="15sp"
-            android:textStyle="bold">
-
-        </Spinner>
 
 
         <Button
             android:id="@+id/Next_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/spinnerMinistryNewApplication"
+            android:layout_below="@id/spinnertypeOfPetitionerNewApplication"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="32dp"

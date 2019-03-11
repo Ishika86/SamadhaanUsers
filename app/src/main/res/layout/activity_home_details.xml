@@ -4,7 +4,254 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomeDetailsActivity">
+    <LinearLayout
+        android:id="@+id/details"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/ministry_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ministry Name"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textAlignment="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Application Filled :"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:id="@+id/application_filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:textAlignment="viewEnd"
+                android:text="Application Filled" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Visible After 15 days :"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/after_15_days"
+                android:layout_width="match_parent"
+                android:textAlignment="viewEnd"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:text="after 15 days"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Converted into Case :"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/converted_to-case"
+                android:layout_width="match_parent"
+                android:textAlignment="viewEnd"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:textColor = "@android:color/white"
+                android:text="converted"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Disposed by MSEFC :"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
 
+            <TextView
+                android:id="@+id/disposed"
+                android:layout_width="match_parent"
+                android:textAlignment="viewEnd"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Disposed"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Rejected by MSEFC :"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/rejected"
+                android:layout_width="match_parent"
+                android:textAlignment="viewEnd"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Rejected"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Applications Pending :"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/pending"
+                android:layout_width="match_parent"
+                android:textAlignment="viewEnd"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Pending"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Mutually Settled :"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mutually_settled"
+                android:layout_width="match_parent"
+                android:textAlignment="viewEnd"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/white"
+                android:text="Settled"
+                android:textSize="16sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Responded by Govt. Agency:"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/responsed"
+                android:layout_width="match_parent"
+                android:textAlignment="viewEnd"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+
+                android:textColor="@android:color/white"
+                android:text="Responded"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/ministries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
 
 </LinearLayout>

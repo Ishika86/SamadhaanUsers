@@ -55,7 +55,7 @@ public class HomeActivity extends AppCompatActivity
         applicationFiledCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, HomeDetailsActivity.class);
+                Intent intent = new Intent(HomeActivity.this, HomeCategoryActivity.class);
                 intent.putExtra("cardType", "applicationFiledCard" );
                 startActivity(intent);
             }
@@ -63,12 +63,15 @@ public class HomeActivity extends AppCompatActivity
         totalAmountCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, HomeCategoryActivity.class);
+                intent.putExtra("cardType", "totalAmountCard" );
+                startActivity(intent);
             }
         });
         mutually_settledCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, HomeDetailsActivity.class);
+                Intent intent = new Intent(HomeActivity.this, HomeCategoryActivity.class);
                 intent.putExtra("cardType", "mutually_settledCard" );
                 startActivity(intent);
             }
@@ -77,7 +80,7 @@ public class HomeActivity extends AppCompatActivity
         applicationPendingCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, HomeDetailsActivity.class);
+                Intent intent = new Intent(HomeActivity.this, HomeCategoryActivity.class);
                 intent.putExtra("cardType", "applicationPendingCard" );
                 startActivity(intent);
             }
@@ -85,7 +88,7 @@ public class HomeActivity extends AppCompatActivity
         applicationRejectedCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, HomeDetailsActivity.class);
+                Intent intent = new Intent(HomeActivity.this, HomeCategoryActivity.class);
                 intent.putExtra("cardType", "applicationRejectedCard" );
                 startActivity(intent);
             }
@@ -93,7 +96,7 @@ public class HomeActivity extends AppCompatActivity
         applicationDisposedCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, HomeDetailsActivity.class);
+                Intent intent = new Intent(HomeActivity.this, HomeCategoryActivity.class);
                 intent.putExtra("cardType", "applicationDisposedCard" );
                 startActivity(intent);
             }

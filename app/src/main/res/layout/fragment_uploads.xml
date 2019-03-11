@@ -421,6 +421,28 @@
             android:padding="2dp"
             android:textColor="@android:color/holo_red_dark"
             android:layout_below="@id/uploadInvoiceBtn"/>
+        <TextView
+            android:id="@+id/textViewTransactionId"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/uploadInvoiceBtn"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="Transaction Id"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextTransactionIdNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/uploadInvoiceBtn"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/textViewTransactionId"
+            android:hint="Transaction Id"
+            android:padding="5dp"
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/Submit_Button"

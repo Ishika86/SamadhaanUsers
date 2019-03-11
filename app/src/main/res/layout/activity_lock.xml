@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LockActivity">
+    <EditText
+        android:id="@+id/manufacturer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:hint="OTP of Manufacturer"
+        android:layout_margin="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="generate"
+            android:layout_gravity="center"
+            android:id="@+id/generateManufacturer"
+
+            android:background="@drawable/login"
+            android:padding="12dp"
+            android:layout_marginRight="8dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="center"
+            android:id="@+id/checkManufacturer"
+            android:background="@drawable/login"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/manufacturerStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not verified"
+        android:textSize="12sp"
+        android:layout_gravity="center"
+        android:textColor="@android:color/holo_red_dark"/>
+
+    <EditText
+        android:id="@+id/seller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:paddingTop="24dp"
+        android:hint="OTP of Seller"
+        android:layout_margin="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="generate"
+            android:layout_gravity="center"
+            android:id="@+id/generateSeller"
+
+            android:background="@drawable/login"
+            android:padding="12dp"
+            android:layout_marginRight="8dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        android:layout_gravity="center"
+        android:id="@+id/checkSeller"
+        android:background="@drawable/login"
+        android:padding="12dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/sellerStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not verified"
+        android:textSize="12sp"
+        android:layout_gravity="center"
+        android:textColor="@android:color/holo_red_dark"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="8dp"/>
+
+
+    <TextView
+        android:id="@+id/amountTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        tools:text="amount"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="32sp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Freeze"
+        android:layout_gravity="center"
+        android:id="@+id/lock"
+        android:background="@drawable/login"
+        android:padding="12dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

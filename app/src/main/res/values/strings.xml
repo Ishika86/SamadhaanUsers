@@ -126,4 +126,14 @@
     <string name="more_information">More Information</string>
     <string name="ministry">Ministry</string>
     <string name="category">Category</string>
+    <string name="central_ministry">Central Ministry</string>
+    <string name="state_ministry">State Ministry</string>
+    <string name="applications_filed">Applications Filed:</string>
+    <string name="type_of_account">Type of account:</string>
+    <string name="seller">Seller</string>
+    <string name="buyer">Buyer</string>
+    <string name="manufacturer">Manufacturer</string>
+    <string name="search">Search by UAID</string>
+    <string name="available">Available</string>
+
 </resources>

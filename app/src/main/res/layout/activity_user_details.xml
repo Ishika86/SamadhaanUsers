@@ -246,11 +246,37 @@
             android:padding="5dp"
             android:textAlignment="center" />
 
+        <TextView
+            android:id="@+id/textViewTypeOfAccountNewApplication"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewUdhyogTypeOfOrg"
+            android:layout_marginTop="24dp"
+            android:padding="4dp"
+            android:text="@string/type_of_account"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerTypeOfAccountNewApplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/textViewUdhyogTypeOfOrg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@id/textViewTypeOfAccountNewApplication"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold">
+
+        </Spinner>
+
         <Button
             android:id="@+id/Next_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewUdhyogTypeOfOrg"
+            android:layout_below="@id/textViewTypeOfAccountNewApplication"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="32dp"

@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class UserDetails2Activity extends AppCompatActivity {
     private EditText PANEditText, GSTINEditText, BankAccNoEditText, IFSCtEditText;
     private Button next, previous;
-    private String udhyogAdhaar, udhyogName, Address, District, pincode, noOfEmployee, state, businessActivity, typeOfOrg;
+    private String udhyogAdhaar, udhyogName, Address, District, pincode, noOfEmployee, state, businessActivity, typeOfOrg, typeOfAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class UserDetails2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_user_details2);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setTitle("2/3");
+        typeOfAccount = getIntent().getStringExtra("typeOfAccount");
         udhyogAdhaar = getIntent().getStringExtra("udhyogAdhaar");
         udhyogName = getIntent().getStringExtra("udhyogName");
         Address = getIntent().getStringExtra("Address");
@@ -55,6 +56,7 @@ public class UserDetails2Activity extends AppCompatActivity {
                     intent.putExtra("Address", Address);
                     intent.putExtra("District", District);
                     intent.putExtra("pincode",pincode );
+                    intent.putExtra("typeOfAccount", typeOfAccount);
                     intent.putExtra("noOfEmployee",noOfEmployee );
                     intent.putExtra("state", state);
                     intent.putExtra("businessActivity",businessActivity );

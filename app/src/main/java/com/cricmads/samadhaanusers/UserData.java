@@ -2,12 +2,14 @@ package com.cricmads.samadhaanusers;
 
 public class UserData {
 
-    private String name, email, udhyogAadhaar, aadhaar, udyogName, address, pincode, gender, phone, socialCategory,physicallyHandicaped, typeOfOrganisation, panNumber, GSTIN, district, state, bankAccountNumber, ifsc, businessActivity, noOfEmployess, UID;
+    private String typeOfAccount, name, email, udhyogAadhaar, aadhaar, udyogName, address, pincode, gender, phone, socialCategory,physicallyHandicaped, typeOfOrganisation, panNumber, GSTIN, district, state, bankAccountNumber, ifsc, businessActivity, noOfEmployess, UID;
 
     public UserData() {
     }
 
-    public UserData(String name, String email, String UID, String udhyogAadhaar, String aadhaar, String udyogName, String address, String pincode, String gender, String phone, String socialCategory, String physicallyHandicaped, String typeOfOrganisation, String panNumber, String GSTIN, String district, String state, String bankAccountNumber, String ifsc, String businessActivity, String noOfEmployess) {
+    public UserData(String typeOfAccount, String name, String email, String UID, String udhyogAadhaar, String aadhaar, String udyogName, String address, String pincode, String gender, String phone, String socialCategory, String physicallyHandicaped, String typeOfOrganisation, String panNumber, String GSTIN, String district, String state, String bankAccountNumber, String ifsc, String businessActivity, String noOfEmployess) {
+
+        this.typeOfAccount = typeOfAccount;
         this.name = name;
         this.email = email;
         this.UID = UID;
@@ -29,6 +31,15 @@ public class UserData {
         this.ifsc = ifsc;
         this.businessActivity = businessActivity;
         this.noOfEmployess = noOfEmployess;
+    }
+
+
+    public String getTypeOfAccount() {
+        return typeOfAccount;
+    }
+
+    public void setTypeOfAccount(String typeOfAccount) {
+        this.typeOfAccount = typeOfAccount;
     }
 
     public String getEmail() {
